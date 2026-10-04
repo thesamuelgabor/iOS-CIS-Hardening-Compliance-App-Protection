@@ -36,7 +36,7 @@ Before Intune can manage any Apple device, the tenant needs an Apple MDM Push Ce
 
 The certificate is valid for one year and must be renewed with the **same Apple ID** that created it, so a shared/service Apple ID is better than a personal one.
 
-<img width="800" height="450" alt="image" src="docs/img/01-push-certificate.png" />
+<img width="575" height="175" alt="image" src="https://github.com/user-attachments/assets/ed8def35-2567-444a-85c9-e6fedbf178b3" />
 
 *Ref 1: Apple MDM Push Certificate*
 
@@ -48,7 +48,7 @@ Imported it under Devices → iOS/iPadOS → Configuration → Create → New po
 
 > **Note:** The End User profile is written for unsupervised devices. If any payload reports an error or conflict on the device, check its status under the profile's device status view.
 
-<img width="800" height="450" alt="image" src="docs/img/02-cis-end-user-profile.png" />
+<img width="846" height="133" alt="image" src="https://github.com/user-attachments/assets/57c70c53-f872-48a4-a750-0f4b389ebfc2" />
 
 *Ref 2: CIS End User profile imported as a custom profile*
 
@@ -69,7 +69,7 @@ Assigned the profile to `SG-iOS-BYOD-EndUser`, the group the enrolled iPhone's u
 | System Security | Require passcode | Require, min length 6 |
 | Noncompliance Actions | Mark noncompliant | Immediately |
 
-<img width="800" height="450" alt="image" src="docs/img/04-compliance-policy.png" />
+<img width="947" height="78" alt="image" src="https://github.com/user-attachments/assets/614ca4fe-19da-4332-aaa5-c0114bd4ffac" />
 
 *Ref 4: Compliance policy*
 
@@ -82,9 +82,9 @@ Assigned the profile to `SG-iOS-BYOD-EndUser`, the group the enrolled iPhone's u
 | Require PIN for access | Yes, numeric, 6 digits |
 | Wipe corporate data on unenroll | Yes |
 
-Applied to Outlook and Teams for `SG-iOS-BYOD-EndUser`.
+Applied to All Microsoft Apps for `SG-iOS-BYOD-EndUser`.
 
-<img width="800" height="450" alt="image" src="docs/img/05-app-protection.png" />
+<img width="966" height="91" alt="image" src="https://github.com/user-attachments/assets/06a9f397-640f-4c0a-a033-efb3e0bb9be7" />
 
 *Ref 5: App protection policy*
 
