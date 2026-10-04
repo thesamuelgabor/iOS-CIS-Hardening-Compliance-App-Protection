@@ -45,7 +45,7 @@ The certificate is valid for one year and must be renewed with the **same Apple 
 
 Created an enrollment type profile in Intune for **Device enrollment with Company Portal**, so the iPhone enrolls by signing in to the Company Portal app (no Apple Business Manager or Automated Device Enrollment involved), and assigned it to `SG-iOS-BYOD-EndUser`.
 
-<img width="800" height="450" alt="image" src="docs/img/02-enrollment-type-profile.png" />
+<img width="1326" height="239" alt="image" src="https://github.com/user-attachments/assets/c3b4ccc2-ec94-4043-9b20-8af1e52035b7" />
 
 *Ref 2: Enrollment type profile (Device enrollment with Company Portal)*
 
@@ -57,7 +57,7 @@ Imported it under Devices → iOS/iPadOS → Configuration → Create → New po
 
 > **Note:** The End User profile is written for unsupervised devices. If any payload reports an error or conflict on the device, check its status under the profile's device status view.
 
-<img width="846" height="133" alt="image" src="https://github.com/user-attachments/assets/57c70c53-f872-48a4-a750-0f4b389ebfc2" />
+<img width="773" height="638" alt="image" src="https://github.com/user-attachments/assets/0f2b6f0a-1385-4dcf-975f-fac758a86c09" />
 
 *Ref 3: CIS End User profile imported as a custom profile*
 
@@ -65,7 +65,7 @@ Imported it under Devices → iOS/iPadOS → Configuration → Create → New po
 
 Assigned the profile to `SG-iOS-BYOD-EndUser`, the group the enrolled iPhone's user belongs to.
 
-<img width="800" height="450" alt="image" src="docs/img/04-profile-assignment.png" />
+<img width="846" height="133" alt="image" src="https://github.com/user-attachments/assets/57c70c53-f872-48a4-a750-0f4b389ebfc2" />
 
 *Ref 4: Profile assignment*
 
@@ -106,14 +106,14 @@ Enrollment steps:
 3. Allowed the management profile download and installed it in Settings
 4. Waited for the CIS End User profile and compliance policy to apply
 
-<img width="800" height="450" alt="image" src="docs/img/07-company-portal-enrollment.png" />
+<img width="1170" height="586" alt="ompany-portal-enrollment" src="https://github.com/user-attachments/assets/8ef8707e-7936-45bb-976a-f2bee226b622" />
 
 *Ref 7: Company Portal enrollment*
 
 #### 8. Validate End to End
 
-Confirmed the device shows Compliant in Intune, the CIS profile shows as Succeeded, and Outlook/Teams enforce the PIN and block copy-paste of corporate data into personal apps.
+Confirmed the device shows Compliant in Intune, the CIS profile shows as Succeeded, and M365 appps enforce the PIN and block copy-paste of corporate data into personal apps.
 
-<img width="800" height="450" alt="image" src="docs/img/08-validation.png" />
+<img width="717" height="36" alt="image" src="https://github.com/user-attachments/assets/d21f4a5b-ddaa-4218-b53e-182897072daf" />
 
 *Ref 8: End-to-end validation*
