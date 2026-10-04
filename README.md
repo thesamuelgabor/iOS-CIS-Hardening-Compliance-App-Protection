@@ -9,6 +9,7 @@ The CIS **Institutional** profile was not used: it targets corporate-owned, supe
 ### Skills Learned
 
 - Creating and uploading the Apple MDM Push Certificate (and renewing it with the same Apple ID)
+- Creating an enrollment type profile for device enrollment with Company Portal
 - Importing a CIS `.mobileconfig` profile into Intune as a custom configuration profile
 - Choosing between the CIS End User and Institutional profiles based on device ownership
 - Compliance policy design feeding Conditional Access
@@ -40,7 +41,15 @@ The certificate is valid for one year and must be renewed with the **same Apple 
 
 *Ref 1: Apple MDM Push Certificate*
 
-#### 2. Import the CIS End User Profile
+#### 2. Create the Enrollment Type Profile
+
+Created an enrollment type profile in Intune for **Device enrollment with Company Portal**, so the iPhone enrolls by signing in to the Company Portal app (no Apple Business Manager or Automated Device Enrollment involved), and assigned it to `SG-iOS-BYOD-EndUser`.
+
+<img width="800" height="450" alt="image" src="docs/img/02-enrollment-type-profile.png" />
+
+*Ref 2: Enrollment type profile (Device enrollment with Company Portal)*
+
+#### 3. Import the CIS End User Profile
 
 The CIS Apple iOS Benchmark ships two `.mobileconfig` profiles: **End User** (personally owned devices) and **Institutional** (corporate-owned, supervised devices). Because the iPhone here is enrolled through Company Portal as a personal device, only the End User profile applies.
 
@@ -50,17 +59,17 @@ Imported it under Devices → iOS/iPadOS → Configuration → Create → New po
 
 <img width="846" height="133" alt="image" src="https://github.com/user-attachments/assets/57c70c53-f872-48a4-a750-0f4b389ebfc2" />
 
-*Ref 2: CIS End User profile imported as a custom profile*
+*Ref 3: CIS End User profile imported as a custom profile*
 
-#### 3. Assign the Profile
+#### 4. Assign the Profile
 
 Assigned the profile to `SG-iOS-BYOD-EndUser`, the group the enrolled iPhone's user belongs to.
 
-<img width="800" height="450" alt="image" src="docs/img/03-profile-assignment.png" />
+<img width="800" height="450" alt="image" src="docs/img/04-profile-assignment.png" />
 
-*Ref 3: Profile assignment*
+*Ref 4: Profile assignment*
 
-#### 4. Compliance Policy
+#### 5. Compliance Policy
 
 | Category | Setting | Value |
 |---|---|---|
@@ -71,9 +80,9 @@ Assigned the profile to `SG-iOS-BYOD-EndUser`, the group the enrolled iPhone's u
 
 <img width="947" height="78" alt="image" src="https://github.com/user-attachments/assets/614ca4fe-19da-4332-aaa5-c0114bd4ffac" />
 
-*Ref 4: Compliance policy*
+*Ref 5: Compliance policy*
 
-#### 5. App Protection Policy
+#### 6. App Protection Policy
 
 | Setting | Value |
 |---|---|
@@ -86,29 +95,25 @@ Applied to All Microsoft Apps for `SG-iOS-BYOD-EndUser`.
 
 <img width="966" height="91" alt="image" src="https://github.com/user-attachments/assets/06a9f397-640f-4c0a-a033-efb3e0bb9be7" />
 
-*Ref 5: App protection policy*
+*Ref 6: App protection policy*
 
-#### 6. Enroll the iPhone via Company Portal
+#### 7. Enroll the iPhone via Company Portal
 
 Enrollment steps:
 
 1. Installed **Company Portal** from the App Store
-2. Signed in with the work account and chose to enroll the device
+2. Signed in with the work account and chose to enroll the device (using the enrollment type profile from Step 2)
 3. Allowed the management profile download and installed it in Settings
 4. Waited for the CIS End User profile and compliance policy to apply
 
-<img width="800" height="450" alt="image" src="docs/img/06-company-portal-enrollment.png" />
+<img width="800" height="450" alt="image" src="docs/img/07-company-portal-enrollment.png" />
 
-*Ref 6: Company Portal enrollment*
+*Ref 7: Company Portal enrollment*
 
-#### 7. Validate End to End
+#### 8. Validate End to End
 
 Confirmed the device shows Compliant in Intune, the CIS profile shows as Succeeded, and Outlook/Teams enforce the PIN and block copy-paste of corporate data into personal apps.
 
-<img width="800" height="450" alt="image" src="docs/img/07-validation.png" />
+<img width="800" height="450" alt="image" src="docs/img/08-validation.png" />
 
-*Ref 7: End-to-end validation*
-
-## About
-
-A personally owned iPhone hardened with the CIS Apple iOS End User profile, with compliance and App Protection layered on top, enrolled through Company Portal with no Apple Business Manager required.
+*Ref 8: End-to-end validation*
